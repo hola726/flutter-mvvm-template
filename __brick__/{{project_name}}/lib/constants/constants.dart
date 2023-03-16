@@ -1,4 +1,4 @@
-const kBaseServerUrl = "{kBaseServerUrl}";
+const kBaseServerUrl = "http://kBaseServerUrl";
 const kTimeoutMillisecond = 20000;
 
 // Ratio
