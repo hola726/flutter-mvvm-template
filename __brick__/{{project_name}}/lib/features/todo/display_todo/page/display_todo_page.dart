@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm_boilerplate/utils/page_helper.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../utils/page_helper.dart';
 import '../../widgets/todo_model_item.dart';
 import '../page_model/display_todo_page_model.dart';
 

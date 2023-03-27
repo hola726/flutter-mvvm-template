@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm_boilerplate/constants/localization_enum.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../app_theme.dart';
+import '../constants/localization_enum.dart';
 import '../widgets/common/loading_indicator.dart';
 import '../widgets/common/main_button.dart';
 
