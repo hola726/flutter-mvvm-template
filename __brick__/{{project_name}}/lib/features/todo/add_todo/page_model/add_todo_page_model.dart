@@ -6,12 +6,12 @@ import '../../services/todo_local_service.dart';
 class AddTodoPageModel extends ChangeNotifier {
   AddTodoPageModel({
     required BuildContext context,
-    required TodoLocalService addTodoLocalService,
+    required TodoLocalService localService,
   })  : _context = context,
-        _addTodoLocalService = addTodoLocalService;
+        _localService = localService;
 
   final BuildContext _context;
-  final TodoLocalService _addTodoLocalService;
+  final TodoLocalService _localService;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _descController = TextEditingController();
   String? _nameValue;
@@ -33,7 +33,7 @@ class AddTodoPageModel extends ChangeNotifier {
 
   void saveTodo() {
     if (_nameValue != null && _descValue != null) {
-      _addTodoLocalService.setTodo(
+      _localService.setTodo(
         todoData: TodoModel(
           name: _nameValue!,
           description: _descValue,

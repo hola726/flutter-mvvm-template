@@ -1,8 +1,8 @@
-const test = "/test";
+const users = "/users";
 
 enum Api {
-  // Test
-  RUN_TEST("$test/run-test");
+  // Users
+  USER_INFO(users);
 
   const Api(this.url);
   final String url;

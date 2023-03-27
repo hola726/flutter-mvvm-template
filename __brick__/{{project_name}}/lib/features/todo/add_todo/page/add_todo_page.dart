@@ -8,22 +8,22 @@ class AddTodoPage extends StatelessWidget {
   static const id = "/addTodoPage";
   const AddTodoPage({Key? key}) : super(key: key);
 
-  Widget _buildMain(AddTodoPageModel addTodoPageModel) {
+  Widget _buildMain(AddTodoPageModel model) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TodoFormField(
-          textController: addTodoPageModel.nameController,
+          textController: model.nameController,
           title: "Name",
-          onChanged: (value) => addTodoPageModel.nameValue = value,
+          onChanged: (value) => model.nameValue = value,
         ),
         const SizedBox(
           height: 20,
         ),
         TodoFormField(
-          textController: addTodoPageModel.descController,
+          textController: model.descController,
           title: "Description",
-          onChanged: (value) => addTodoPageModel.descValue = value,
+          onChanged: (value) => model.descValue = value,
         ),
         const SizedBox(
           height: 20,
@@ -32,7 +32,7 @@ class AddTodoPage extends StatelessWidget {
           width: 300,
           height: 40,
           child: ElevatedButton(
-            onPressed: addTodoPageModel.saveTodo,
+            onPressed: model.saveTodo,
             child: const Text("확인"),
           ),
         ),
@@ -42,12 +42,12 @@ class AddTodoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AddTodoPageModel addTodoPageModel = context.watch<AddTodoPageModel>();
+    final AddTodoPageModel model = context.watch<AddTodoPageModel>();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Add Todo"),
       ),
-      body: _buildMain(addTodoPageModel),
+      body: _buildMain(model),
     );
   }
 }

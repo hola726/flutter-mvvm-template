@@ -21,7 +21,7 @@ class MainButton extends StatefulWidget {
     this.disableBorderColor,
     this.hoverColor,
     this.buttonWidget,
-    this.isBoldText,
+    this.isBoldText = true,
     this.isLoading,
   }) : super(key: key);
 
@@ -109,6 +109,29 @@ class _MainButton extends State<MainButton> {
     }
   }
 
+  double _handleLoadingSize(
+    double basicValue,
+    double multiple,
+  ) {
+    double? standard = _getStandard();
+
+    if (standard == null) return basicValue;
+
+    return standard * multiple;
+  }
+
+  double? _getStandard() {
+    if (widget.height == null && widget.width == null) return null;
+    if (widget.height == null) return widget.width!;
+    if (widget.width == null) return widget.height!;
+
+    if (widget.height! < widget.width!) {
+      return widget.height!;
+    } else {
+      return widget.width!;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -142,6 +165,9 @@ class _MainButton extends State<MainButton> {
         child: Center(
           child: widget.isLoading == true
               ? LoadingIndicator(
+                  height: _handleLoadingSize(20, 0.4),
+                  width: _handleLoadingSize(20, 0.4),
+                  strokeWidth: _handleLoadingSize(3, 0.15),
                   color: widget.disable == true ? null : Colors.white,
                 )
               : widget.buttonWidget ??

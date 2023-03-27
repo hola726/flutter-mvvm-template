@@ -16,9 +16,16 @@ enum Localization {
   REMOTE_CANCEL("요청 취소"),
   UNKNOWN("기타 오류"),
 
+  // Network
+  CONNECT_NETWORK("네트워크에 연결되었어요"),
+  CHECK_NETWORK("네트워크 연결을 확인해주세요"),
+
   RETRY_PLZ("다시시도 해주십시오"),
   CONFIRM("확인"),
-  CANCEL("취소");
+  CANCEL("취소"),
+  REFRESH("새로고침"),
+  EMPTY_DATA("데이터가 없습니다."),
+  BAD_CONNECTION("네트워크 연결 상태가 좋지 않습니다.\n잠시 후 다시 시도해 주세요.");
 
   const Localization(this.krDescription);
   final String krDescription;

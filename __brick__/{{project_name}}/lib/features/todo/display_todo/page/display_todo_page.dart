@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvvm_boilerplate/utils/page_helper.dart';
 import 'package:provider/provider.dart';
 
 import '../../widgets/todo_model_item.dart';
@@ -8,14 +9,12 @@ class DisplayTodoPage extends StatelessWidget {
   static const id = "/displayTodoPage";
   const DisplayTodoPage({Key? key}) : super(key: key);
 
-  Widget _buildMain(DisplayTodoPageModel displayTodoPageModel) {
-    if (displayTodoPageModel.getTodoList == null ||
-        displayTodoPageModel.getTodoList!.isEmpty) {
-      return const Center(
-        child: Text(
-          "데이터가 없습니다.",
-          style: TextStyle(fontSize: 15),
-        ),
+  Widget _buildMain(DisplayTodoPageModel model) {
+    if (model.isDisablePage()) {
+      return PageHelper(
+        isLoading: false,
+        isEmpty: model.isEmpty(),
+        isNetworkDisconnect: model.isNetworkDisConnect(),
       );
     }
     return SingleChildScrollView(
@@ -26,7 +25,7 @@ class DisplayTodoPage extends StatelessWidget {
         child: Column(
           children: [
             Column(
-              children: displayTodoPageModel.getTodoList!.map(
+              children: model.getTodoList!.map(
                 (todoData) {
                   return Padding(
                     padding: const EdgeInsets.only(top: 20),
@@ -45,13 +44,12 @@ class DisplayTodoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DisplayTodoPageModel displayTodoPageModel =
-        context.watch<DisplayTodoPageModel>();
+    final DisplayTodoPageModel model = context.watch<DisplayTodoPageModel>();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Todo List Page"),
       ),
-      body: _buildMain(displayTodoPageModel),
+      body: _buildMain(model),
     );
   }
 }

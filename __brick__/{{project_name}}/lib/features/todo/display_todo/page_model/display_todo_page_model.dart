@@ -1,14 +1,30 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_mvvm_boilerplate/providers/network_provider.dart';
 
 import '../../model/todo_model.dart';
 import '../../services/todo_local_service.dart';
 
 class DisplayTodoPageModel extends ChangeNotifier {
   DisplayTodoPageModel({
-    required TodoLocalService addTodoLocalService,
-  }) : _addTodoLocalService = addTodoLocalService;
+    required TodoLocalService localService,
+    required NetworkProvider networkProvider,
+  })  : _localService = localService,
+        _networkProvider = networkProvider;
 
-  final TodoLocalService _addTodoLocalService;
+  final TodoLocalService _localService;
+  final NetworkProvider _networkProvider;
 
-  List<TodoModel>? get getTodoList => _addTodoLocalService.getTodoList();
+  List<TodoModel>? get getTodoList => _localService.getTodoList();
+
+  bool isDisablePage() {
+    return isEmpty();
+  }
+
+  bool isEmpty() {
+    return getTodoList == null || getTodoList!.isEmpty;
+  }
+
+  bool isNetworkDisConnect() {
+    return !_networkProvider.isEnableNetwork;
+  }
 }
