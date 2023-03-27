@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_mvvm_boilerplate/providers/network_provider.dart';
-import 'package:flutter_mvvm_boilerplate/utils/network_helper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import 'constants/constants.dart';
 import 'constants/localization_enum.dart';
+import 'providers/network_provider.dart';
 import 'routes/router.dart';
+import 'utils/network_helper.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_mvvm_boilerplate/providers/network_provider.dart';
 
+import '../../../../providers/network_provider.dart';
 import '../../model/todo_model.dart';
 import '../../services/todo_local_service.dart';
 
