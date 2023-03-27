@@ -7,7 +7,7 @@
 
 |             NAME             | VERSION |
 |:----------------------------:|:-------:|
-| [flutter-mvvm-boilerplate](https://github.com/hola726/flutter-mvvm-boilerplate) |  0.1.0  |
+| [flutter-mvvm-boilerplate](https://github.com/hola726/flutter-mvvm-boilerplate) |  0.2.0  |
 
 
 ## 📟 Template Stack
