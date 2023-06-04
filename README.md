@@ -1,8 +1,8 @@
 # Flutter MVVM Template
 
 ## Overview
-[flutter-mvvm-boilerplate](https://github.com/hola726/flutter-mvvm-boilerplate) 바탕으로 개발된 flutter mvvm template입니다.
 
+MVVM 아키텍처로 구성된 Flutter 템플릿입니다. 템플릿을 통해 프로젝트를 생성할시 [flutter-mvvm-boilerplate](https://github.com/hola726/flutter-mvvm-boilerplate) 바탕으로 개발된 boilerplate를 제공합니다.
 ## 🛠 Prerequisite
 
 |             NAME             | VERSION |
